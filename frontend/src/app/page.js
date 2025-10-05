@@ -27,12 +27,22 @@ const HeroSection = () => {
       <img
         src="/foot.png"
         alt="A decorative vertical image"
-        class="absolute top-20 left-0 w-40 z-20"
+        className="absolute top-20 left-0 w-40 z-20"
       ></img>
       <img
         src="/foot.png"
         alt="A decorative vertical image"
-        class="absolute top-90 left-0 w-40 z-20"
+        className="absolute top-90 left-0 w-40 z-20"
+      ></img>
+      <img
+        src="/foot.png"
+        alt="A decorative vertical image"
+        className="absolute bottom-10 right-0 w-40 z-20"
+      ></img>
+      <img
+        src="/foot.png"
+        alt="A decorative vertical image"
+        className="absolute bottom-80 right-0 w-40 z-20"
       ></img>
       {/* Main Hero Section */}
       <div className="relative isolate overflow-hidden bg-white pb-24 pt-28">
@@ -67,7 +77,24 @@ const HeroSection = () => {
                   <p className="text-4xl font-semibold text-[#003e0c]">452.8</p>
                   <p className="text-slate-600">kg CO₂e</p>
                 </div>
-                
+                {/* Mock Graph Section */}
+                <div className="w-full rounded-lg bg-slate-100 p-3 flex items-center justify-between shadow-sm">
+                  {/* Graph Container */}
+                  <div className="h-80 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center overflow-hidden bg-white">
+                    <img src="/graph.png" alt="Weekly Reduction Graph" className="h-full w-full object-contain" />
+                  </div>
+
+                  {/* Motivational Text */}
+                  <div className="ml-1 flex flex-col">
+                    <p className="text-sm font-semibold text-[#003e0c]">
+                      Wow! Great progress this week!
+                    </p>
+                    <p className="text-xs text-black mt-1">
+                      You achieved a significant reduction in your carbon score — keep it up!
+                    </p>
+                  </div>
+                </div>
+
                 <div className="mt-6 space-y-3">
                   <p className="text-sm font-medium text-[#003e0c]">Mitigation Suggestions</p>
                   <div className="flex items-center gap-3 rounded-lg bg-white p-3 shadow-sm">

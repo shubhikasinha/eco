@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 const NAV_LINKS = [
   { href: "/calculator", label: "Calculate Emission" },
   { href: "/solutionhub", label: "Solution Hub" },
-  { href: "/playbooks", label: "AI Playbooks" },
+  { href: "/future", label: "Revenue" },
   { href: "/ngohub", label: "Partnerships" },
 ];
 

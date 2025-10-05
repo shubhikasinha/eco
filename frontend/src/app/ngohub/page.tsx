@@ -109,10 +109,7 @@ const NGOHub = () => {
                 className="p-8 border-2 border-slate-200/80 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group relative overflow-hidden animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Glowing border effect on hover */}
-                <div className="absolute -inset-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-                  <div className="absolute inset-0 rounded-xl [background:conic-gradient(from_90deg_at_50%_50%,#85b708_0%,#003e0c_50%,#85b708_100%)] blur-lg animate-spin-slow" />
-                </div>
+
                 
                 <div className="relative z-10 flex flex-col h-full bg-slate-50 rounded-lg">
                   <div className="flex items-center gap-4 mb-4">
