@@ -20,7 +20,7 @@ const getScore = (emission: number): { grade: string; color: string; level: stri
   if (emission < 100) return { grade: "A", color: "text-green-600", level: "Low" };
   if (emission < 300) return { grade: "B", color: "text-yellow-500", level: "Medium-Low" }; // Adjusted to a slightly more yellow-green
   if (emission < 500) return { grade: "C", color: "text-orange-500", level: "Medium" }; // Orange for medium
-  return { grade: "D", color: "text-red-600", level: "High" };
+  return { grade: "D", color: "text--[#003e0c]", level: "High" };
 };
 
 const getAlternativeIcon = (title: string) => {
