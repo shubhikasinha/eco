@@ -60,7 +60,7 @@ const HeroSection = () => {
                 Forecast carbon, spin up mitigations, and ship offsets in one command center. We orchestrate emissions modelling, weather intelligence, Gemini analysis, and marketplace activations so teams can ship greener without slowing operations.
               </p>
               <div className="flex items-center">
-                <a href="/calculator" className="bg-[#003e0c] text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-[#005a14] hover:scale-105 transform transition-transform duration-200 mt-6">
+                <a href="/calculator" className="bg-[#003e0c] text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-[#005a14] hover:scale-105 transform transition-transform duration-200 mt-2">
                   Find Carbon Emitted
                 </a>
               </div>
