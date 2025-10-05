@@ -71,7 +71,7 @@ const NGOHub = () => {
               Partner for a Greener Planet
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-              Discover and collaborate with leading environmental organizations to amplify your company's sustainability impact.
+              Discover and collaborate with leading environmental organizations to amplify your company&apos;s sustainability impact.
             </p>
 
             <div className="max-w-2xl mx-auto relative mb-6">

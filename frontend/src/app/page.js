@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from "next/image";
 import { Zap, BrainCircuit, ShieldCheck } from 'lucide-react';
 
 // You can place this component in your components directory
@@ -24,26 +25,34 @@ const HeroSection = () => {
 
   return (
     <main className="min-h-screen">
-      <img
+      <Image
         src="/foot.png"
         alt="A decorative vertical image"
+        width={160}
+        height={500}
         className="absolute top-20 left-0 w-40 z-20"
-      ></img>
-      <img
+      />
+      <Image
         src="/foot.png"
         alt="A decorative vertical image"
+        width={160}
+        height={500}
         className="absolute top-90 left-0 w-40 z-20"
-      ></img>
-      <img
+      />
+      <Image
         src="/foot.png"
         alt="A decorative vertical image"
+        width={160}
+        height={500}
         className="absolute bottom-10 right-0 w-40 z-20"
-      ></img>
-      <img
+      />
+      <Image
         src="/foot.png"
         alt="A decorative vertical image"
+        width={160}
+        height={500}
         className="absolute bottom-80 right-0 w-40 z-20"
-      ></img>
+      />
       {/* Main Hero Section */}
       <div className="relative isolate overflow-hidden bg-white pb-24 pt-28">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6">
@@ -81,7 +90,7 @@ const HeroSection = () => {
                 <div className="w-full rounded-lg bg-slate-100 p-3 flex items-center justify-between shadow-sm">
                   {/* Graph Container */}
                   <div className="h-80 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center overflow-hidden bg-white">
-                    <img src="/graph.png" alt="Weekly Reduction Graph" className="h-full w-full object-contain" />
+                    <Image src="/graph.png" alt="Weekly Reduction Graph" width={300} height={300} className="h-full w-full object-contain" />
                   </div>
 
                   {/* Motivational Text */}
@@ -135,7 +144,7 @@ const HeroSection = () => {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-4xl font-semibold text-[#003e0c]">Go from Data to Decarbonization in Minutes</h2>
-            <p className="mt-4 text-lg text-slate-600">Our platform is more than a calculator; it's an end-to-end command center for your company's climate strategy.</p>
+            <p className="mt-4 text-lg text-slate-600">Our platform is more than a calculator; it&apos;s an end-to-end command center for your company&apos;s climate strategy.</p>
           </div>
 
           <div className="mt-16 grid md:grid-cols-3 gap-8">

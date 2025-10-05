@@ -3,24 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-type RouteStepProps = {
-  onNext: (data: { source: string; destination: string }) => void;
-  initialData: any;
-};
+const RouteStep = ({ onNext }) => {
+  const [source, setSource] = useState("");
+  const [destination, setDestination] = useState("");
 
-const RouteStep = ({ onNext, initialData }: RouteStepProps) => {
-  const [source, setSource] = useState(initialData.source || "");
-  const [destination, setDestination] = useState(initialData.destination || "");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleNext = () => {
     if (source && destination) {
       onNext({ source, destination });
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleNext} className="space-y-6">
       <h2 className="text-2xl font-bold text-primary mb-6">Where is your shipment going?</h2>
       
       <div className="space-y-4">
