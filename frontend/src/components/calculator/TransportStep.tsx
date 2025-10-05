@@ -9,19 +9,23 @@ type TransportStepProps = {
   initialData: any;
 };
 
+// This is the new data structure you provided
+const vehicle_options = {
+  "road": {"hgv_avg": "Average Truck", "hgv_rigid_avg": "Rigid Truck", "hgv_artic_avg": "Articulated Truck"},
+  "air": {"freighter_avg": "Average Freighter", "belly_freight": "Passenger Plane Belly"},
+  "ship": {"container_ship_avg": "Container Ship", "bulk_carrier_avg": "Bulk Carrier", "ro-ro_ferry": "Ro-Ro Ferry"},
+  "train": {"diesel": "Diesel Train", "electric": "Electric Train"},
+};
+
 const modes = [
   { id: "road", label: "Road", icon: Truck },
   { id: "air", label: "Air", icon: Plane },
   { id: "ship", label: "Ship", icon: Ship },
-  { id: "rail", label: "Train", icon: Train },
+  // FIX 1: Changed 'rail' to 'train' to match the keys in vehicle_options
+  { id: "train", label: "Train", icon: Train },
 ];
 
-const vehicleTypes: Record<string, string[]> = {
-  road: ["Average Truck", "Rigid Truck", "Articulated Truck"],
-  air: ["Average Cargo Plane", "Short-haul Flight", "Long-haul Flight"],
-  ship: ["Container Ship", "Bulk Carrier", "General Cargo"],
-  rail: ["Electric Train", "Diesel Train", "Freight Train"],
-};
+// The old 'vehicleTypes' object is no longer needed.
 
 const TransportStep = ({ onCalculate, onBack, initialData }: TransportStepProps) => {
   const [selectedMode, setSelectedMode] = useState(initialData.mode || "");
@@ -31,8 +35,8 @@ const TransportStep = ({ onCalculate, onBack, initialData }: TransportStepProps)
   const handleCalculate = () => {
     if (selectedMode && selectedVehicle) {
       setIsCalculating(true);
-      // Simulate calculation delay
       setTimeout(() => {
+        // Now sends the key (e.g., "hgv_avg") instead of the label
         onCalculate({ mode: selectedMode, vehicleType: selectedVehicle });
       }, 1500);
     }
@@ -42,7 +46,7 @@ const TransportStep = ({ onCalculate, onBack, initialData }: TransportStepProps)
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-primary mb-6 text-[#003e0c]">How will it travel?</h2>
       
-      {/* Mode Selection */}
+      {/* Mode Selection (No changes here) */}
       <div>
         <h3 className="text-lg font-semibold text-primary mb-4 text-[#85b708]">Select Transport Mode</h3>
         <div className="grid grid-cols-2 gap-4">
@@ -75,18 +79,19 @@ const TransportStep = ({ onCalculate, onBack, initialData }: TransportStepProps)
         <div className="animate-fade-in">
           <h3 className="text-lg font-semibold text-primary mb-4 text-[#85b708]">Select Vehicle Type</h3>
           <div className="space-y-2">
-            {vehicleTypes[selectedMode].map((vehicle) => (
+            {/* FIX 2: Changed how we map over the vehicle options */}
+            {Object.entries(vehicle_options[selectedMode as keyof typeof vehicle_options]).map(([vehicleKey, vehicleName]) => (
               <Card
-                key={vehicle}
-                onClick={() => setSelectedVehicle(vehicle)}
+                key={vehicleKey}
+                onClick={() => setSelectedVehicle(vehicleKey)}
                 className={`p-4 bg--[#85b708]/10 cursor-pointer text-[#85b708] transition-all hover:shadow-md ${
-                  selectedVehicle === vehicle
+                  selectedVehicle === vehicleKey
                     ? "border-2 border-accent bg-accent/5"
                     : "border border-border hover:border-accent/50"
                 }`}
               >
-                <span className={`font-medium ${selectedVehicle === vehicle ? "text-primary" : "text-muted-foreground"}`}>
-                  {vehicle}
+                <span className={`font-medium ${selectedVehicle === vehicleKey ? "text-primary" : "text-muted-foreground"}`}>
+                  {vehicleName}
                 </span>
               </Card>
             ))}
@@ -94,7 +99,7 @@ const TransportStep = ({ onCalculate, onBack, initialData }: TransportStepProps)
         </div>
       )}
 
-      {/* Action Buttons */}
+      {/* Action Buttons (No changes here) */}
       <div className="flex gap-4 pt-4">
         <Button 
           type="button" 
@@ -110,7 +115,6 @@ const TransportStep = ({ onCalculate, onBack, initialData }: TransportStepProps)
           variant="outline"
           disabled={!selectedMode || !selectedVehicle || isCalculating}
           className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 text-[#003e0c]"
-          
         >
           {isCalculating ? (
             <span className="flex items-center gap-2 text-[#003e0c]">

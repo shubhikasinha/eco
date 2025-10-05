@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 const NAV_LINKS = [
-  { href: "/", label: "Command Center" },
+  { href: "/calculator", label: "Calculate Emission" },
   { href: "/solutionhub", label: "Solution Hub" },
   { href: "/playbooks", label: "AI Playbooks" },
-  { href: "/executive", label: "Executive Mode" },
+  { href: "/ngohub", label: "Partnerships" },
 ];
 
 export const metadata = {
